@@ -1,0 +1,127 @@
+@import 'styles/colors';
+@import 'styles/typography';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input,
+button {
+    background-color: unset;
+    border: unset;
+    border-radius: unset;
+    appearance: none;
+    outline: unset;
+}
+
+body {
+    padding: 5%;
+}
+
+h1 {
+    margin-bottom: 100px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    
+    tr:nth-child(even) {
+        background-color: $lightGray;
+    }
+        
+    th,
+    td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+            text-align: left;
+        }
+
+        &:nth-child(3) {
+            text-align: center;
+        }
+
+        &:nth-child(4) {
+            text-align: right;
+        }
+
+        a {
+            color: #000;
+            transition: opacity .2s ease;
+
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+}
+
+hr {
+    opacity: .2;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.add-section {
+
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+
+        label {
+
+            input {
+                background-color: $lightGray;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                display: block;
+                width: 100%;
+                margin-top: 10px;
+                padding: 10px 20px;
+                font-size: 1rem;
+                transition: border .2s ease;
+
+                &:focus,
+                &:active {
+                    border: 1px solid #000;
+                }
+            }
+        }
+
+        button {
+            background-color: #000;
+            color: #fff;
+            grid-column: 1 / span 2;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: opacity .2s ease;
+
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+
+    .alert {
+        color: #fff;
+        background-color: $alert;
+        display: none;
+        padding: 20px;
+
+        &.error {
+            display: block;
+        }
+    }
+}
